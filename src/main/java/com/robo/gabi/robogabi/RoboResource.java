@@ -22,16 +22,17 @@ public class RoboResource {
 
     @GetMapping
     private void start() {
-//        WebDriver driver = new ChromeDriver();
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds());
-//        try {
-//            driver.get("https://google.com/ncr");
-//            driver.findElement(By.name("q")).sendKeys("cheese" + Keys.ENTER);
-//            WebElement firstResult = wait.until(presenceOfElementLocated(By.cssSelector("h3>div")));
-//            System.out.println(firstResult.getAttribute("textContent"));
-//        } finally {
-//            driver.quit();
-//        }
+        WebDriver driver = new ChromeDriver();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds());
+        try {
+            driver.get("https://google.com/ncr");
+            driver.findElements(By.cssSelector(""));
+            driver.findElement(By.name("q")).sendKeys("cheese" + Keys.ENTER);
+            WebElement firstResult = wait.until(presenceOfElementLocated(By.cssSelector("h3>div")));
+            System.out.println(firstResult.getAttribute("textContent"));
+        } finally {
+            driver.quit();
+        }
 
     }
 
